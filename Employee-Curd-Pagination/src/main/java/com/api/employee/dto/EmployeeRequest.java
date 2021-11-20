@@ -1,5 +1,7 @@
 package com.api.employee.dto;
 
+import java.time.LocalDateTime;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -49,8 +51,15 @@ public class EmployeeRequest {
 	@NotNull(message = "location cannot be null")
 	private Integer locationId;
 	
-
+	private String code;
 	
+    private Integer pageNumber;
+    
+    private Integer itemsPerPage;
+	
+	private LocalDateTime fromDate;
+	
+	private LocalDateTime toDate;
 	
 	private String filePath;
 	

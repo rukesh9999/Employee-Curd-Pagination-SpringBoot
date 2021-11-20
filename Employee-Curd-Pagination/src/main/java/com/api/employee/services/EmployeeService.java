@@ -15,7 +15,7 @@ import com.api.employee.models.Designation;
 
 public interface EmployeeService {
 
-	public Map<String, Object> getAllEmployees(String firstName,String lastName,int page,int size);
+	public Map<String, Object> getAllEmployees(EmployeeRequest   employeeRequest);
 
 	public String saveEmployee(EmployeeRequest employeeRequest, MultipartFile file,HttpServletRequest request);
 	

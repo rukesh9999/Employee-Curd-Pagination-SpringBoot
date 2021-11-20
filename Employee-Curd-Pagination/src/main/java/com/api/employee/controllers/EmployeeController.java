@@ -31,20 +31,17 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 @CrossOrigin("*")
-@RequestMapping("/loan")
+@RequestMapping("/api")
 @RestController
 public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService; 
 	
-	@GetMapping("/all")
-	public ResponseEntity<Map<String, Object>> getEmployees(@RequestParam(required =false) String firstName,
-			                                                @RequestParam(required = false)String lastName,
-			                                                @RequestParam(defaultValue ="0")int page,
-			                                                @RequestParam(defaultValue ="3")int size)
+	@PostMapping("/all")
+	public ResponseEntity<Map<String, Object>> getEmployees(@RequestBody(required = false)  EmployeeRequest  employeeRequest)
 	{
-		Map<String, Object>  employees = employeeService.getAllEmployees(firstName,lastName,page,size); 
+		Map<String, Object>  employees = employeeService.getAllEmployees(employeeRequest); 
 		return new ResponseEntity<Map<String, Object>>(employees,HttpStatus.OK);
 	}
 	

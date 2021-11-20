@@ -1,5 +1,6 @@
 package com.api.employee.dto;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -20,8 +21,8 @@ public class EmployeeResponse {
 	private String email;
 	private String location;
 	private String designation;
-	private Date createdDate;
-	private Date modifiedDate;
+	private LocalDateTime createdDate;
+	private LocalDateTime modifiedDate;
 	private String filePath;
 	private Integer locationId;
 	private Integer designationId;

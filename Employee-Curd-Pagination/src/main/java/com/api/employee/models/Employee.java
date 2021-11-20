@@ -1,5 +1,6 @@
 package com.api.employee.models;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -66,10 +67,10 @@ public class Employee {
 	
 	
 	@Column(name="created_date",unique =false,nullable =false)
-	private Date createdDate;
+	private LocalDateTime createdDate;
 	
 	@Column(name="modified_date",unique =false,nullable =false)
-	private Date modifiedDate;
+	private LocalDateTime modifiedDate;
 	
 	@Column(name="file_path",unique =false,nullable =true)
 	private String filePath; 
